@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body{
+            background-color: rgb(112, 112, 191);
+        }
+        h1{
+            text-align: center;
+        }
+        .calc{
+            position:relative;
+            width: 300px;
+            height: auto;
+            border: 2px solid black;
+            margin:auto;
+            top:200px;
+        }
+        button{
+            display:inline;
+            border: solid;
+            margin-left: 50px;
+            margin-right: auto;
+            border-radius: 20px;
+        }
+        p{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc">
+    <h1>BMI Calulator</h1>
+    <p>Weight:<input id="weight" placeholder="Enter your weight"/></p>
+    <p>Height:<input id="height" placeholder="Enter your height"/></p>
+    <div class=""><button onclick="calculate()">calculate</button>
+    <button onclick="reset()">Reset</button>
+    </div>
+    <p id="bmi"></p>
+    <p id="show"></p>
+    </div>
+</body>
+<script>
+    function calculate(){
+        let weightvalue=document.getElementById("weight").value.trim();
+        let heightvalue=document.getElementById("height").value.trim();
+        let val;
+        let weight=parseFloat(weightvalue);
+        let height=parseFloat(heightvalue);
+        val=(weight/(height*height)).toFixed(2);
+        let valuee=parseFloat(val);
+        let message;
+        if(valuee <= 18.5){
+            document.getElementById("bmi").innerText="Need more muscle";
+        }
+        else if(valuee>=18.5 && valuee<=24.5){
+            document.getElementById("bmi").innerText="Healthy";
+        }
+        else{
+            document.getElementById("bmi").innerText="Obese";
+        }
+        
+        document.getElementById("show").innerText="Your BMI:"+valuee;
+    }
+    function reset(){
+        document.getElementById("weight").value="";
+        document.getElementById("height").value="";
+        document.getAnimations("show").value="";
+    }
+    
+</script>
+</html>
