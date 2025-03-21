@@ -48,26 +48,25 @@
         let heightvalue=document.getElementById("height").value.trim();
         let val;
         let weight=parseFloat(weightvalue);
-        let height=parseFloat(heightvalue);
+        let height=parseFloat(heightvalue/100);
         val=(weight/(height*height)).toFixed(2);
         let valuee=parseFloat(val);
-        let message;
         if(valuee <= 18.5){
             document.getElementById("bmi").innerText="Need more muscle";
         }
-        else if(valuee>=18.5 && valuee<=24.5){
+        else if(valuee>=18.5 && valuee<=34.5){
             document.getElementById("bmi").innerText="Healthy";
         }
         else{
             document.getElementById("bmi").innerText="Obese";
         }
-        
-        document.getElementById("show").innerText="Your BMI:"+valuee;
+        document.getElementById("show").innerText="Your BMI:"+ valuee;
     }
     function reset(){
         document.getElementById("weight").value="";
         document.getElementById("height").value="";
-        document.getAnimations("show").value="";
+        document.getElementById("bmi").innerText="";
+        document.getElementById("show").innerText="";
     }
     
 </script>
