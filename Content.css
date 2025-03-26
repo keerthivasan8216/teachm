@@ -1,0 +1,22 @@
+.cont{
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: rgb(255, 162, 0);
+    
+}
+.cont h1{
+    margin-left:0px;
+    margin-top: -10px;
+}
+@media screen and (max-width:500px){
+    .cont{
+        width: auto;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto;
+        background-color: rgb(255, 162, 0);
+        
+    }
+ }
